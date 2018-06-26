@@ -17,3 +17,6 @@ On bastion host edit:
 		HostName Internal_IP_Address
 
 Connect from local console: ssh external 'ssh internal'
+
+bastion_IP = 35.204.98.75
+someinternalhost_IP = 10.164.0.2 
