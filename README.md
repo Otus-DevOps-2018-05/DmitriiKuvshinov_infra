@@ -21,3 +21,4 @@ Bash скрипт для создания истанса с указанием �
   --tags kuvshinov-server \
   --restart-on-failure \
   --metadata-from-file startup-script=script/startup_puma.sh
+
