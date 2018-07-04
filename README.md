@@ -8,6 +8,7 @@ Startup script will upload from local repository
 Адрес ВМ:
 testapp_IP = 35.204.119.186 testapp_port = 9292
 
+Команда для добавления правила файрволла: gcloud compute firewall-rules create puma-default-server --target-tags="puma-server" --source-ranges="0.0.0.0/0" --allow tcp:9292
 
 Bash скрипт для создания истанса с указанием имени
 
