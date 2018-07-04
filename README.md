@@ -3,12 +3,13 @@ DmitriiKuvshinov Infra repository
 To create new instance need: run create_instance enter_name_of_instace
 Startup script will upload from local repository
 
-testapp_IP = 35.204.119.186 
-testapp_port = 9292
 
-Extra task:
+#ДЗ 4
+Адрес ВМ:
+testapp_IP = 35.204.119.186 testapp_port = 9292
 
-create_instance script
+
+Bash скрипт для создания истанса с указанием имени
 
 #!/bin/bash
 /Users/user/Downloads/google-cloud-sdk/bin/gcloud compute instances create ${1}\
