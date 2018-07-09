@@ -1,3 +1,4 @@
+{
       "builders": [
         {
 
@@ -18,14 +19,17 @@
 	"provisioners": [
     	{
             "type": "shell",
-           "script": "../packer/install_ruby.sh",
-	   "script": "../packer/install_mongodb.sh",
-	   "script": "../packer/deploy.sh",		
+           "script": "scripts/install_ruby.sh",
             "execute_command": "sudo {{.Path}}"
         },
-        {
+	{
             "type": "shell",
-            "script": "../packer/install_mongodb.sh",
+           "script": "scripts/install_mongodb.sh",
+            "execute_command": "sudo {{.Path}}"
+        },
+	{
+            "type": "shell",
+           "script": "scripts/deploy.sh",
             "execute_command": "sudo {{.Path}}"
         }
     			]
