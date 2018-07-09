@@ -1,5 +1,4 @@
-{
-    "builders": [
+      "builders": [
         {
 
 	    "project_id": "{{user `project_id`}}",
@@ -20,6 +19,8 @@
     	{
             "type": "shell",
            "script": "../packer/install_ruby.sh",
+	   "script": "../packer/install_mongodb.sh",
+	   "script": "../packer/deploy.sh",		
             "execute_command": "sudo {{.Path}}"
         },
         {
