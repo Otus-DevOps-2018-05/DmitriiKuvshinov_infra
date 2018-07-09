@@ -1,14 +1,19 @@
 {
     "builders": [
         {
+
+	    "project_id": "{{user `project_id`}}",
+	    "source_image_family": "{{user `source_image_family`}}",
             "type": "googlecompute",
-            "project_id": "lithe-resource-207814",
             "image_name": "reddit-base-{{timestamp}}",
             "image_family": "reddit-base",
-            "source_image_family": "ubuntu-1604-lts",
             "zone": "europe-west1-b",
             "ssh_username": "appuser",
-            "machine_type": "f1-micro"
+            "machine_type": "{{user `machine_type`}}",
+	    "disk_size": "{{user `disk_size`}}",
+            "disk_type": "{{user `disk_type`}}",
+            "network": "{{user `network`}}",
+            "tags": "{{user `tags`}}"
         }
 		],
 	"provisioners": [
