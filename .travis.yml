@@ -1,9 +1,10 @@
 dist: trusty
 sudo: required
 language: bash
-cloud-testapp
-cache: false
 before_install:
+
+- curl https://raw.githubusercontent.com/express42/otus-homeworks/2018-05/run.sh |
+  bash
 notifications:
   slack:
     rooms:
