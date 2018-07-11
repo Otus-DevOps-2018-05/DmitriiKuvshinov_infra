@@ -1,5 +1,6 @@
 # DmitriiKuvshinov_infra
 DmitriiKuvshinov Infra repository
+cloud-testapp
 To create new instance need: run create_instance enter_name_of_instace
 Startup script will upload from local repository
 
@@ -22,4 +23,23 @@ Bash скрипт для создания истанса с указанием �
   --tags kuvshinov-server \
   --restart-on-failure \
   --metadata-from-file startup-script=script/startup_puma.sh
+
+=======
+ssh -i /Users/user/.ssh/appuser -At appuser@35.204.237.76 'ssh 10.164.0.2'
+
+To connect with alias need:
+edit local file in user folder .ssh/config
+	add:
+		Host external
+		user appuser
+		HostName Public_IP_Address
+
+On bastion host edit:
+	/home/appuser/.ssh/config
+	
+
+Connect from local console: ssh external 'ssh internal'
+
+bastion_IP = 35.204.98.75
+someinternalhost_IP = 10.164.0.2
 
