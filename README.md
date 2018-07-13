@@ -4,11 +4,11 @@ cloud-testapp
 To create new instance need: run create_instance enter_name_of_instace
 Startup script will upload from local repository
 
+
 ## ДЗ 3
 ```
 <b> Для подключения к локальной машине через бастион:</b>
 
-```
 ssh -i /Users/user/.ssh/appuser -At appuser@35.204.237.76 'ssh 10.164.0.2'
 ```
 
@@ -24,7 +24,7 @@ On bastion host edit:
 	/home/appuser/.ssh/config
 
 Connect from local console: ssh external 'ssh internal'
-```
+
 
 bastion_IP = 35.204.98.75
 someinternalhost_IP = 10.164.0.2
@@ -38,8 +38,9 @@ testapp_port = 9292
 <b> Команда для добавления правила файрволла:</b>
 ```
 gcloud compute firewall-rules create puma-default-server --target-tags="puma-server" --source-ranges="0.0.0.0/0" --allow tcp:9292
-```
-```
+
+
+<b> Bash скрипт для создания истанса с указанием имени </b>
 
 <b> Bash скрипт для создания истанса с указанием имени </b>
 
@@ -67,3 +68,4 @@ gcloud compute firewall-rules create puma-default-server --target-tags="puma-ser
 ## ДЗ 7
 <b> Выполнено основное задание </b>
 Принципы организации инфраструктурного кода и работа над инфраструктурой в команде на примере Terraform
+
