@@ -28,6 +28,7 @@ Connect from local console: ssh external 'ssh internal'
 
 bastion_IP = 35.204.98.75
 someinternalhost_IP = 10.164.0.2
+```
 
 ## ДЗ 4
 Адрес ВМ:
@@ -38,9 +39,10 @@ testapp_port = 9292
 ```
 gcloud compute firewall-rules create puma-default-server --target-tags="puma-server" --source-ranges="0.0.0.0/0" --allow tcp:9292
 ```
+```
 
 <b> Bash скрипт для создания истанса с указанием имени </b>
-```
+
 #!/bin/bash
 /Users/user/Downloads/google-cloud-sdk/bin/gcloud compute instances create ${1}\
   --boot-disk-size=10GB \
@@ -51,6 +53,11 @@ gcloud compute firewall-rules create puma-default-server --target-tags="puma-ser
   --restart-on-failure \
   --metadata-from-file startup-script=script/startup_puma.sh
 ```
+## ДЗ 5
+Работа с образами VM в облаке. Знакомство с Packer и экосистемой компании HashiCorp.
+Для создания base образа необходимо запустить билд пакера с параметром -var-file=variables.json
+Для задания со * необходимо из папки files запустить crate-reddit-vm.sh
+Немного изменил структуру папок, но заметил это уже поздно =(
 
 
 ## ДЗ 6
