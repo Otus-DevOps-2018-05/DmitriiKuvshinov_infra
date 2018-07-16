@@ -28,11 +28,12 @@ Connect from local console: ssh external 'ssh internal'
 
 bastion_IP = 35.204.98.75
 someinternalhost_IP = 10.164.0.2
-
+```
 ## ДЗ 4
 Адрес ВМ:
 testapp_IP = 35.204.119.186
 testapp_port = 9292
+
 
 <b> Команда для добавления правила файрволла:</b>
 ```
