@@ -54,18 +54,16 @@ gcloud compute firewall-rules create puma-default-server --target-tags="puma-ser
   --restart-on-failure \
   --metadata-from-file startup-script=script/startup_puma.sh
 ```
-## ДЗ 5
+## ДЗ 4
 Работа с образами VM в облаке. Знакомство с Packer и экосистемой компании HashiCorp.
 Для создания base образа необходимо запустить билд пакера с параметром -var-file=variables.json
 Для задания со * необходимо из папки files запустить crate-reddit-vm.sh
-Немного изменил структуру папок, но заметил это уже поздно =(
 
-
-## ДЗ 6
+## ДЗ 5
 <b> Выполнено основное </b>
 Настроено параметризованное задание управления ИТ с использованием terraform
 
-## ДЗ 7
+## ДЗ 6
 <b> Выполнено основное задание </b>
 Принципы организации инфраструктурного кода и работа над инфраструктурой в команде на примере Terraform
 
