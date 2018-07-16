@@ -6,9 +6,9 @@ Startup script will upload from local repository
 
 
 ## ДЗ 3
-```
-<b> Для подключения к локальной машине через бастион:</b>
 
+<b> Для подключения к локальной машине через бастион:</b>
+```
 ssh -i /Users/user/.ssh/appuser -At appuser@35.204.237.76 'ssh 10.164.0.2'
 ```
 
