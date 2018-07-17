@@ -22,14 +22,14 @@ resource "google_compute_instance" "app" {
   }
 
   metadata {
-    ssh-keys = "${var.public_key_path}"
+    ssh-keys = "${file(var.public_key_path)}"
   }
 
   connection {
     type        = "ssh"
     user        = "appuser"
     agent       = false
-    private_key = "${var.privatekey}"
+    private_key = "${file(var.private_key_path)}"
   }
 
   provisioner "file" {
