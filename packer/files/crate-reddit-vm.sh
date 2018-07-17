@@ -9,4 +9,3 @@ gcloud compute --project=lithe-resource-207814 instances create instance-2 \
 		--boot-disk-size=10GB \
 		--boot-disk-type=pd-standard \
 		--boot-disk-device-name=instance-2
-		--metadata-from-file startup-script=startup_puma.sh
