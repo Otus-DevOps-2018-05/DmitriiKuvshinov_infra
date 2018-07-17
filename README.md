@@ -82,20 +82,20 @@ alreadyExists
 Также сделано разбиение инфраструктуры на модули
 
 
-##ДЗ 8
+## ДЗ 8
 
 <b> Знакомство с Ansible </b>
 В процессе выполениния был развернута инфраструктура stage
 Рассмотрена работа с inventory и ее параметризацией
 
 ```
-ansible app -m command -a 'rm -rf ~/reddit'
+ansible app -m command -a 'rm -rf ~/reddit' && ansible-playbook clone.yml
 ```
 Исзвенился статус <b>changed=1</b>. Плейбук выполнился, а т.к. папка была (после удаления из нее файлов) была пуста - статус поля changed изменился.
 
 <b>Задание со *</b>
 JSON инвентори должен содержать информацию о хостах в определенном формате
-Статья: https://www.jeffgeerling.com/blog/creating-custom-dynamic-inventories-ansible
+статья: https://www.jeffgeerling.com/blog/creating-custom-dynamic-inventories-ansible
 
 Вызов инвентори исполняемого файла для вывода JSON осуществляется с параметром --list
 В итоге получем запуск ansible с динамеческим инвентори: 
