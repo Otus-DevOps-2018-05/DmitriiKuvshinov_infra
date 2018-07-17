@@ -14,18 +14,14 @@ variable zone {
 
 variable public_key_path {
   description = "Path to the public key used for ssh access"
+  default = "appuser:${file("~/.ssh/appuser.pub")}"
 }
 
 variable disk_image {
   description = "Disk image"
 }
 
-variable pubkey {
- description = "File of user public key"
- default = "appuser:${file("~/.ssh/appuser.pub")}"
-}
-
-variable privatekey {
+variable private_key {
  description = "File of private key"
  default = "${file("~/.ssh/appuser")}"
 }

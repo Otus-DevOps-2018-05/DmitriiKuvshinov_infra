@@ -22,7 +22,7 @@ resource "google_compute_instance" "app" {
   }
 
   metadata {
-    ssh-keys = "${var.pubkey}"
+    ssh-keys = "${var.public_key_path}"
   }
 
   connection {
