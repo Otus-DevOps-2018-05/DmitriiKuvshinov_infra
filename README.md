@@ -50,7 +50,6 @@ gcloud compute firewall-rules create puma-default-server --target-tags="puma-ser
   --machine-type=g1-small \
   --tags kuvshinov-server \
   --restart-on-failure \
-  --metadata-from-file startup-script=script/startup_puma.sh
 ```
 ## ДЗ 5
 Работа с образами VM в облаке. Знакомство с Packer и экосистемой компании HashiCorp.
