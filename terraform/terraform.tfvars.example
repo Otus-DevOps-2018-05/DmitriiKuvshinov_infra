@@ -1,4 +1,4 @@
 project="my_project"
 public_key_path="~/.ssh/appuser.pub"
 disk_image = "reddit-base-1531118158"
-
+private_key = "~/.ssh/appuser"

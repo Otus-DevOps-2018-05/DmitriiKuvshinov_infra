@@ -6,7 +6,7 @@
 	    "source_image_family": "{{user `source_image_family`}}",
             "type": "googlecompute",
             "image_name": "reddit-base-{{timestamp}}",
-            "image_family": "reddit-base",
+            "image_family": "reddit-full",
             "zone": "europe-west1-b",
             "ssh_username": "appuser",
             "machine_type": "{{user `machine_type`}}",
@@ -30,6 +30,11 @@
 	{
             "type": "shell",
            "script": "scripts/deploy.sh",
+            "execute_command": "sudo {{.Path}}"
+        },
+        {
+            "type": "shell",
+           "script": "files/startup_puma.sh",
             "execute_command": "sudo {{.Path}}"
         }
     			]
