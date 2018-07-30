@@ -3,7 +3,7 @@ resource "google_compute_address" "app_ip" {
 }
 
 resource "google_compute_instance" "app" {
-  name         = "reddit-app"
+  name         = "${var.instance_name}"
   tags         = ["reddit-app"]
   machine_type = "g1-small"
   zone         = "${var.zone}"
