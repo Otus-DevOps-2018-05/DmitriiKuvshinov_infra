@@ -8,12 +8,6 @@ variable region {
 }
 
 variable zone {
-  description = "Zone"
-  default     = "europe-west1-b"
-}
-
-variable public_key_path {
-  description = "Path to the public key used for ssh access"
   description = "Region"
   default     = "us-west1-b"
 }
@@ -30,8 +24,4 @@ variable db_disk_image {
 
 variable public_key_path {
   default = "~/.ssh/appuser.pub"
-}
-
-variable private_key {
- description = "File of private key"
 }
