@@ -4,8 +4,7 @@ cloud-testapp
 To create new instance need: run create_instance enter_name_of_instace
 Startup script will upload from local repository
 
-<<<<<<< HEAD
-=======
+
 ## ДЗ 3
 
 <b> Для подключения к локальной машине через бастион:</b>
@@ -13,8 +12,7 @@ Startup script will upload from local repository
 ```
 ssh -i /Users/user/.ssh/appuser -At appuser@35.204.237.76 'ssh 10.164.0.2'
 ```
-=======
->>>>>>> terraform-2
+
 ## ДЗ 3
 
 <b> Для подключения к локальной машине через бастион:</b>
@@ -22,6 +20,7 @@ ssh -i /Users/user/.ssh/appuser -At appuser@35.204.237.76 'ssh 10.164.0.2'
 ```
 ssh -i /Users/user/.ssh/appuser -At appuser@35.204.237.76 'ssh 10.164.0.2'
 ```
+
 <b> To connect with alias need: </b>
 ```
 edit local file in user folder .ssh/config
@@ -29,45 +28,32 @@ edit local file in user folder .ssh/config
 		Host external
 		user appuser
 		HostName Public_IP_Address
-
+```
 On bastion host edit:
 	/home/appuser/.ssh/config
 
 Connect from local console: ssh external 'ssh internal'
-
-<<<<<<< HEAD
-=======
+```
 bastion_IP = 35.204.98.75
 someinternalhost_IP = 10.164.0.2
-```
-=======
-```
->>>>>>> terraform-2
+
 
 bastion_IP = 35.204.98.75
 someinternalhost_IP = 10.164.0.2
 ```
+
 ## ДЗ 4
 Адрес ВМ:
 testapp_IP = 35.204.119.186
 testapp_port = 9292
 
-<<<<<<< HEAD
-
-=======
-=======
->>>>>>> terraform-2
 <b> Команда для добавления правила файрволла:</b>
 ```
 gcloud compute firewall-rules create puma-default-server --target-tags="puma-server" --source-ranges="0.0.0.0/0" --allow tcp:9292
 ```
 
 <b> Bash скрипт для создания истанса с указанием имени </b>
-<<<<<<< HEAD
 
-=======
-=======
->>>>>>> terraform-2
 ```
 #!/bin/bash
 /Users/user/Downloads/google-cloud-sdk/bin/gcloud compute instances create ${1}\
@@ -77,18 +63,7 @@ gcloud compute firewall-rules create puma-default-server --target-tags="puma-ser
   --machine-type=g1-small \
   --tags kuvshinov-server \
   --restart-on-failure \
-<<<<<<< HEAD
   --metadata-from-file startup-script=script/startup_puma.sh
-```
-## ДЗ 5
-Работа с образами VM в облаке. Знакомство с Packer и экосистемой компании HashiCorp.
-Для создания base образа необходимо запустить билд пакера с параметром -var-file=variables.json
-Для задания со * необходимо из папки files запустить crate-reddit-vm.sh
-
-## ДЗ 6
-<b> Выполнено основное </b>
-Настроено параметризованное задание управления ИТ с использованием terraform
-=======
 ```
 ## ДЗ 5
 Работа с образами VM в облаке. Знакомство с Packer и экосистемой компании HashiCorp.
@@ -116,9 +91,8 @@ alreadyExists
 ```
 Возникла ошибка, т.к. такое правило уже сущетсвует
 
-Настроено разворачивание инфраструкртуры с помощью конфигов и шаблонов с использованием terraform, но в добавок к предыдущему ДЗ, были параметрищированы правила firewall
+Настроено развертывание инфраструкртуры с помощью конфигов и шаблонов с использованием terraform, но в добавок к предыдущему ДЗ, были параметрищированы правила firewall
 Также сделано разбиение инфраструктуры на модули
-=======
+```
   --metadata-from-file startup-script=script/startup_puma.sh
 ```
->>>>>>> terraform-2

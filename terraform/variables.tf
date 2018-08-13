@@ -23,4 +23,3 @@ variable disk_image {
 variable private_key {
  description = "File of private key"
 }
-
