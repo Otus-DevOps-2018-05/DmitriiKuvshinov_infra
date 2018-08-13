@@ -4,12 +4,12 @@ variable project {
 
 variable region {
   description = "Region"
-  default     = "us-west1"
+  default     = "europe-west1"
 }
 
 variable zone {
   description = "Region"
-  default     = "us-west1-b"
+  default     = "europe-west1-b"
 }
 
 variable app_disk_image {
