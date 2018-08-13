@@ -4,24 +4,23 @@ variable project {
 
 variable region {
   description = "Region"
-  default     = "us-west1"
+  default     = "europe-west1"
 }
 
 variable zone {
-  description = "Region"
-  default     = "us-west1-b"
-}
-
-variable app_disk_image {
-  description = "Disk image for reddit app"
-  default     = "reddit-base-1531118158"
-}
-
-variable db_disk_image {
-  description = "Disk image for reddit db"
-  default     = "reddit-base-1531118158"
+  description = "Zone"
+  default     = "europe-west1-b"
 }
 
 variable public_key_path {
-  default = "~/.ssh/appuser.pub"
+  description = "Path to the public key used for ssh access"
 }
+
+variable disk_image {
+  description = "Disk image"
+}
+
+variable private_key {
+ description = "File of private key"
+}
+
