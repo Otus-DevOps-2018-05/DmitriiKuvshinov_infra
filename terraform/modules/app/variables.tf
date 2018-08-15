@@ -13,5 +13,5 @@ variable app_disk_image {
 
 variable instance_name {
   description = "Instance name"
-  default     = "reddit-db"
+  default     = "reddit-app"
 }
