@@ -137,3 +137,15 @@ ansible all -i ./inventory.sh -m ping
 роли
 Описываем два окружения
 Используем коммьюнити роль nginx
+
+## ДЗ 11
+<b>Разработка и тестирование Ansible ролей и плейбуков</b>
+Локальная разработка при помощи Vagrant, доработка ролей для провижининга в Vagrant
+Тестирование ролей при помощи Molecule
+Переключение сбора образов пакером на использование ролей
+
+Packer не видел роли ansible, т.к. необходимо прописать:
+```
+ansible_env_vars": ["ANSIBLE_ROLES_PATH=...
+```
+Согласно документации Packer: https://www.packer.io/docs/provisioners/ansible-local.html#role_paths
