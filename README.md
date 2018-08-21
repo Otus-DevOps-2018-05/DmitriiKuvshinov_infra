@@ -4,6 +4,15 @@ cloud-testapp
 To create new instance need: run create_instance enter_name_of_instace
 Startup script will upload from local repository
 
+
+## ДЗ 3
+
+<b> Для подключения к локальной машине через бастион:</b>
+
+```
+ssh -i /Users/user/.ssh/appuser -At appuser@35.204.237.76 'ssh 10.164.0.2'
+```
+
 ## ДЗ 3
 
 <b> Для подключения к локальной машине через бастион:</b>
@@ -18,21 +27,21 @@ edit local file in user folder .ssh/config
 		Host external
 		user appuser
 		HostName Public_IP_Address
-
+```
 On bastion host edit:
 	/home/appuser/.ssh/config
 
 Connect from local console: ssh external 'ssh internal'
 
-
+```
 bastion_IP = 35.204.98.75
 someinternalhost_IP = 10.164.0.2
+
 ```
 ## ДЗ 4
 Адрес ВМ:
 testapp_IP = 35.204.119.186
 testapp_port = 9292
-
 
 <b> Команда для добавления правила файрволла:</b>
 ```
@@ -80,6 +89,32 @@ alreadyExists
 
 Настроено разворачивание инфраструкртуры с помощью конфигов и шаблонов с использованием terraform, но в добавок к предыдущему ДЗ, были параметрищированы правила firewall
 Также сделано разбиение инфраструктуры на модули
+
+## ДЗ 8
+
+<b> Знакомство с Ansible </b>
+В процессе выполениния был развернута инфраструктура stage
+Рассмотрена работа с inventory и ее параметризацией
+
+```
+ansible app -m command -a 'rm -rf ~/reddit' && ansible-playbook clone.yml
+```
+Исзвенился статус <b>changed=1</b>. Плейбук выполнился, а т.к. папка была (после удаления из нее файлов) была пуста - статус поля changed изменился.
+
+<b>Задание со *</b>
+JSON инвентори должен содержать информацию о хостах в определенном формате
+статья: https://www.jeffgeerling.com/blog/creating-custom-dynamic-inventories-ansible
+
+Вызов инвентори исполняемого файла для вывода JSON осуществляется с параметром --list
+В итоге получем запуск ansible с динамеческим инвентори: 
+```
+ansible all -i ./inventory.sh -m ping
+```
+или можно внести ./inventory.sh в ansible.cfg и использовать просто вызов ansible all -m ping
+=======
+Настроено развертывание инфраструкртуры с помощью конфигов и шаблонов с использованием terraform, но в добавок к предыдущему ДЗ, были параметрищированы правила firewall
+Также сделано разбиение инфраструктуры на модули
+```
   --metadata-from-file startup-script=script/startup_puma.sh
 ```
 
