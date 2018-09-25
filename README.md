@@ -5,13 +5,6 @@ To create new instance need: run create_instance enter_name_of_instace
 Startup script will upload from local repository
 
 
-## ДЗ 3
-
-<b> Для подключения к локальной машине через бастион:</b>
-
-```
-ssh -i /Users/user/.ssh/appuser -At appuser@35.204.237.76 'ssh 10.164.0.2'
-```
 
 ## ДЗ 3
 
@@ -40,7 +33,7 @@ someinternalhost_IP = 10.164.0.2
 ```
 bastion_IP = 35.204.98.75
 someinternalhost_IP = 10.164.0.2
-```
+
 
 ## ДЗ 4
 Адрес ВМ:
@@ -115,7 +108,7 @@ JSON инвентори должен содержать информацию о 
 ansible all -i ./inventory.sh -m ping
 ```
 или можно внести ./inventory.sh в ansible.cfg и использовать просто вызов ansible all -m ping
-=======
+
 Настроено развертывание инфраструкртуры с помощью конфигов и шаблонов с использованием terraform, но в добавок к предыдущему ДЗ, были параметрищированы правила firewall
 Также сделано разбиение инфраструктуры на модули
 ```
@@ -177,3 +170,15 @@ ansible all -i ./inventory.sh -m ping
 роли
 Описываем два окружения
 Используем коммьюнити роль nginx
+
+## ДЗ 11
+<b>Разработка и тестирование Ansible ролей и плейбуков</b>
+Локальная разработка при помощи Vagrant, доработка ролей для провижининга в Vagrant
+Тестирование ролей при помощи Molecule
+Переключение сбора образов пакером на использование ролей
+
+Packer не видел роли ansible, т.к. необходимо прописать:
+```
+ansible_env_vars": ["ANSIBLE_ROLES_PATH=...
+```
+Согласно документации Packer: https://www.packer.io/docs/provisioners/ansible-local.html#role_paths
