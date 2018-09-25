@@ -5,13 +5,6 @@ To create new instance need: run create_instance enter_name_of_instace
 Startup script will upload from local repository
 
 
-## ДЗ 3
-
-<b> Для подключения к локальной машине через бастион:</b>
-
-```
-ssh -i /Users/user/.ssh/appuser -At appuser@35.204.237.76 'ssh 10.164.0.2'
-```
 
 ## ДЗ 3
 
@@ -20,6 +13,7 @@ ssh -i /Users/user/.ssh/appuser -At appuser@35.204.237.76 'ssh 10.164.0.2'
 ```
 ssh -i /Users/user/.ssh/appuser -At appuser@35.204.237.76 'ssh 10.164.0.2'
 ```
+
 <b> To connect with alias need: </b>
 ```
 edit local file in user folder .ssh/config
@@ -32,12 +26,15 @@ On bastion host edit:
 	/home/appuser/.ssh/config
 
 Connect from local console: ssh external 'ssh internal'
-
 ```
 bastion_IP = 35.204.98.75
 someinternalhost_IP = 10.164.0.2
 
 ```
+bastion_IP = 35.204.98.75
+someinternalhost_IP = 10.164.0.2
+
+
 ## ДЗ 4
 Адрес ВМ:
 testapp_IP = 35.204.119.186
@@ -111,7 +108,7 @@ JSON инвентори должен содержать информацию о 
 ansible all -i ./inventory.sh -m ping
 ```
 или можно внести ./inventory.sh в ansible.cfg и использовать просто вызов ansible all -m ping
-=======
+
 Настроено развертывание инфраструкртуры с помощью конфигов и шаблонов с использованием terraform, но в добавок к предыдущему ДЗ, были параметрищированы правила firewall
 Также сделано разбиение инфраструктуры на модули
 ```
@@ -158,6 +155,7 @@ JSON инвентори должен содержать информацию о 
 ansible all -i ./inventory.sh -m ping
 ```
 или можно внести ./inventory.sh в ansible.cfg и использовать просто вызов ansible all -m ping
+
 
 ## ДЗ 9
 <b> Деплой и управление конфигурацией с Ansible </b>
