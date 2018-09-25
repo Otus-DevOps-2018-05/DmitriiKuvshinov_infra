@@ -33,6 +33,9 @@ On bastion host edit:
 	/home/appuser/.ssh/config
 
 Connect from local console: ssh external 'ssh internal'
+```
+bastion_IP = 35.204.98.75
+someinternalhost_IP = 10.164.0.2
 
 ```
 bastion_IP = 35.204.98.75
@@ -159,6 +162,7 @@ JSON инвентори должен содержать информацию о 
 ansible all -i ./inventory.sh -m ping
 ```
 или можно внести ./inventory.sh в ansible.cfg и использовать просто вызов ansible all -m ping
+
 
 ## ДЗ 9
 <b> Деплой и управление конфигурацией с Ansible </b>
