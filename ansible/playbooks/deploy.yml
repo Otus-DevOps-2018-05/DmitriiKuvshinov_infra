@@ -7,7 +7,7 @@
         repo: 'https://github.com/express42/reddit.git'
         dest: /tmp/reddit
         version: monolith
-      notify: restart puma
+#      notify: restart puma
 
     - name: bundle install
       bundler:

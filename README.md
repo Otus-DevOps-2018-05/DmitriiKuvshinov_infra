@@ -37,7 +37,7 @@ Connect from local console: ssh external 'ssh internal'
 bastion_IP = 35.204.98.75
 someinternalhost_IP = 10.164.0.2
 
-
+```
 bastion_IP = 35.204.98.75
 someinternalhost_IP = 10.164.0.2
 ```
@@ -94,6 +94,52 @@ alreadyExists
 Настроено разворачивание инфраструкртуры с помощью конфигов и шаблонов с использованием terraform, но в добавок к предыдущему ДЗ, были параметрищированы правила firewall
 Также сделано разбиение инфраструктуры на модули
 
+## ДЗ 8
+
+<b> Знакомство с Ansible </b>
+В процессе выполениния был развернута инфраструктура stage
+Рассмотрена работа с inventory и ее параметризацией
+
+```
+ansible app -m command -a 'rm -rf ~/reddit' && ansible-playbook clone.yml
+```
+Исзвенился статус <b>changed=1</b>. Плейбук выполнился, а т.к. папка была (после удаления из нее файлов) была пуста - статус поля changed изменился.
+
+<b>Задание со *</b>
+JSON инвентори должен содержать информацию о хостах в определенном формате
+статья: https://www.jeffgeerling.com/blog/creating-custom-dynamic-inventories-ansible
+
+Вызов инвентори исполняемого файла для вывода JSON осуществляется с параметром --list
+В итоге получем запуск ansible с динамеческим инвентори: 
+```
+ansible all -i ./inventory.sh -m ping
+```
+или можно внести ./inventory.sh в ansible.cfg и использовать просто вызов ansible all -m ping
+=======
+Настроено развертывание инфраструкртуры с помощью конфигов и шаблонов с использованием terraform, но в добавок к предыдущему ДЗ, были параметрищированы правила firewall
+Также сделано разбиение инфраструктуры на модули
+```
+  --metadata-from-file startup-script=script/startup_puma.sh
+```
+
+<b> Выполнено основное </b>
+В ходе работы был однят тестовый стенд из ДЗ 6
+
+При выполнении команды 
+```
+$ terraform apply
+google_compute_instance.app: Refreshing state... (ID: reddit-app)
+...
+* google_compute_firewall.firewall_ssh: 1 error(s) occurred:
+* google_compute_firewall.firewall_ssh: Error creating firewall: googleapi: Error 409:
+The resource 'projects/infra-179014/global/firewalls/default-allow-ssh' already exists,
+alreadyExists
+```
+Возникла ошибка, т.к. такое правило уже сущетсвует
+
+Настроено разворачивание инфраструкртуры с помощью конфигов и шаблонов с использованием terraform, но в добавок к предыдущему ДЗ, были параметрищированы правила firewall
+Также сделано разбиение инфраструктуры на модули
+
 
 ## ДЗ 8
 
@@ -124,3 +170,10 @@ ansible all -i ./inventory.sh -m ping
 • Аналогично один плейбук, но много сценариев
 • И много плейбуков.
 • Изменим провижн пакер образов на ansible плейбуки
+
+## ДЗ 10
+<b>Ansible: работа с ролями и окружениями</b>
+Переносим созданные плейбуки в раздельные
+роли
+Описываем два окружения
+Используем коммьюнити роль nginx
